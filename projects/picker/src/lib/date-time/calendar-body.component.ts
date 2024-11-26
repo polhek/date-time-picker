@@ -35,6 +35,7 @@ export class CalendarCell {
         '[class.owl-dt-calendar-body]': 'owlDTCalendarBodyClass'
     },
     preserveWhitespaces: false,
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OwlCalendarBodyComponent implements OnInit {

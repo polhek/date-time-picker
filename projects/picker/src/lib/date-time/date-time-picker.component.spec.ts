@@ -73,7 +73,7 @@ describe('OwlDateTimeComponent', () => {
         });
 
         TestBed.overrideModule(BrowserDynamicTestingModule, {
-            
+
         }).compileComponents();
 
         return TestBed.createComponent(component);
@@ -2387,6 +2387,7 @@ describe('OwlDateTimeComponent', () => {
 });
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt" [value]="date">
         <owl-date-time [opened]="opened"
@@ -2408,6 +2409,7 @@ class StandardDateTimePickerComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt" [selectMode]="selectMode" [values]="dates">
         <owl-date-time [startAt]="startAt" [endAt]="endAt"
@@ -2427,6 +2429,7 @@ class RangeDateTimePickerComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt">
         <input [owlDateTime]="dt">
@@ -2436,6 +2439,7 @@ class RangeDateTimePickerComponent {
 class MultiInputDateTimePickerComponent { }
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time #dt></owl-date-time>
     `
@@ -2446,6 +2450,7 @@ class NoInputDateTimePickerComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt" [value]="date">
         <owl-date-time #dt [startAt]="startDate"></owl-date-time>
@@ -2459,6 +2464,7 @@ class DateTimePickerWithStartAtComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt" [value]="date">
         <owl-date-time #dt [startView]="startView"
@@ -2478,6 +2484,7 @@ class DateTimePickerWithStartViewComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [(ngModel)]="moment" [selectMode]="selectMode" [owlDateTime]="dt">
         <owl-date-time #dt></owl-date-time>
@@ -2493,6 +2500,7 @@ class DateTimePickerWithNgModelComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [formControl]="formControl"
                [owlDateTime]="dt"
@@ -2511,6 +2519,7 @@ class DateTimePickerWithFormControlComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt">
         <button [owlDateTimeTrigger]="dt">Icon</button>
@@ -2525,6 +2534,7 @@ class DateTimePickerWithTriggerComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [(ngModel)]="date" [min]="min" [max]="max"
                [owlDateTime]="dt"
@@ -2546,6 +2556,7 @@ class DateTimePickerWithMinAndMaxValidationComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [(ngModel)]="date"
                [owlDateTimeFilter]="filter"
@@ -2566,6 +2577,7 @@ class DateTimePickerWithFilterValidationComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <input [owlDateTime]="dt"
                [owlDateTimeTrigger]="dt"
@@ -2594,6 +2606,7 @@ class DateTimePickerWithChangeAndInputEventsComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
     <input [owlDateTime]="dt" [(ngModel)]="value" [min]="min" [max]="max">
     <owl-date-time #dt [startAt]="startAt"></owl-date-time>
@@ -2611,6 +2624,7 @@ class DateTimePickerWithISOStringsComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
     <input [(ngModel)]="selected" [owlDateTime]="dt">
     <owl-date-time (afterPickerOpen)="openedSpy()" (afterPickerClosed)="closedSpy()" #dt></owl-date-time>

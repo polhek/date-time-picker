@@ -48,6 +48,7 @@ const WEEKS_PER_VIEW = 6;
     exportAs: 'owlYearView',
     templateUrl: './calendar-month-view.component.html',
     styleUrls: ['./calendar-month-view.component.scss'],
+    standalone: false,
     host: {
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView'
     },
@@ -61,7 +62,7 @@ export class OwlMonthViewComponent<T>
      * */
     @Input()
     hideOtherMonths = false;
-    
+
     /**
      * Whether to show calendar weeks in the calendar
      * */

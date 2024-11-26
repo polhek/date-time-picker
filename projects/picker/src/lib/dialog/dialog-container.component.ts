@@ -46,6 +46,7 @@ const zoomFadeInFrom = {
 @Component({
     selector: 'owl-dialog-container',
     templateUrl: './dialog-container.component.html',
+    standalone: false,
     animations: [
         trigger('slideModal', [
             transition(

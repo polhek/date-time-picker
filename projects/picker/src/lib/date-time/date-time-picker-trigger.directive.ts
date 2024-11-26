@@ -18,6 +18,7 @@ import { merge, of as observableOf, Subscription } from 'rxjs';
 
 @Directive({
     selector: '[owlDateTimeTrigger]',
+    standalone: false,
     host: {
         '(click)': 'handleClickOnHost($event)',
         '[class.owl-dt-trigger-disabled]': 'owlDTTriggerDisabledClass'

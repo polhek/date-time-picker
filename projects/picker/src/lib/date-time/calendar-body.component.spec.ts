@@ -94,6 +94,7 @@ describe('OwlCalendarBodyComponent', () => {
 });
 
 @Component({
+    standalone: false,
     template: `
         <table owl-date-time-calendar-body
                [rows]="rows"

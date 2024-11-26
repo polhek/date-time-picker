@@ -39,6 +39,7 @@ import { OptionsTokens, Options } from './options-provider';
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView',
         '[class.owl-dt-calendar-multi-year-view]': 'owlDTCalendarMultiYearView'
     },
+    standalone: false,
     preserveWhitespaces: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
