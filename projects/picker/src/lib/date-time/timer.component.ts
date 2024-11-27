@@ -24,6 +24,7 @@ import { take } from 'rxjs/operators';
     templateUrl: './timer.component.html',
     styleUrls: ['./timer.component.scss'],
     preserveWhitespaces: false,
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         '[class.owl-dt-timer]': 'owlDTTimerClass',

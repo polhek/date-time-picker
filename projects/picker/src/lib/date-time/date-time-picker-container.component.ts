@@ -36,6 +36,7 @@ import {
     styleUrls: ['./date-time-picker-container.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     preserveWhitespaces: false,
+    standalone: false,
     animations: [
         owlDateTimePickerAnimations.transformPicker,
         owlDateTimePickerAnimations.fadeInPicker

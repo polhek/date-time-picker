@@ -326,7 +326,7 @@ describe('OwlCalendarComponent', () => {
         it('should show calendar weeks classes only when attribute showCalendarWeeks in true', () => {
              // Check the initial value is false
             expect(calendarInstance.showCalendarWeeks).toBe(false);
-            
+
             // Verify classes are not present initially
             let weekNumberElement = fixture.debugElement.nativeElement.querySelector('.week-number');
             let owlCalendarWeeksElement = fixture.debugElement.nativeElement.querySelector('.owl-calendar-weeks');
@@ -336,10 +336,10 @@ describe('OwlCalendarComponent', () => {
             // Set showCalendarWeeks to true
             testComponent.showCalendarWeeks = true;
             fixture.detectChanges(); // Trigger change detection to apply the new value
-            
+
             // Now check if the calendarInstance reflects this change
             expect(calendarInstance.showCalendarWeeks).toBe(true);
-            
+
             // Verify classes are present after the change
             weekNumberElement = fixture.debugElement.nativeElement.querySelector('.week-number');
             owlCalendarWeeksElement = fixture.debugElement.nativeElement.querySelector('.owl-calendar-weeks');
@@ -524,6 +524,7 @@ describe('OwlCalendarComponent', () => {
 });
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-calendar
                 [(selected)]="selected"
@@ -542,6 +543,7 @@ class StandardCalendarComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-calendar [selectMode]="selectMode"
                                 [pickerMoment]="pickerMoment"
@@ -558,6 +560,7 @@ class CalendarWithMinMaxComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-calendar [selectMode]="selectMode"
                                 [pickerMoment]="pickerMoment"
@@ -572,6 +575,7 @@ class CalendarWithCalendarWeeks {
 }
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-calendar [(selected)]="selected"
                                 [selectMode]="selectMode"

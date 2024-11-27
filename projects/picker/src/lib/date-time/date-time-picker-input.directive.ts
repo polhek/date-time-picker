@@ -52,6 +52,7 @@ export const OWL_DATETIME_VALIDATORS: any = {
 @Directive({
     selector: 'input[owlDateTime]',
     exportAs: 'owlDateTimeInput',
+    standalone: false,
     host: {
         '(keydown)': 'handleKeydownOnHost($event)',
         '(blur)': 'handleBlurOnHost($event)',

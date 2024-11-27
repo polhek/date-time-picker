@@ -73,6 +73,7 @@ export const OWL_DTPICKER_SCROLL_STRATEGY_PROVIDER = {
     exportAs: 'owlDateTime',
     templateUrl: './date-time-picker.component.html',
     styleUrls: ['./date-time-picker.component.scss'],
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     preserveWhitespaces: false
 })
