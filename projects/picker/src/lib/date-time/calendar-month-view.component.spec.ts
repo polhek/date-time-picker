@@ -365,6 +365,7 @@ describe('OwlMonthViewComponent', () => {
 });
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-month-view
                 [(selected)]="selected"
@@ -377,6 +378,7 @@ class StandardMonthViewComponent {
 }
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-month-view
                 [(pickerMoment)]="pickerMoment"

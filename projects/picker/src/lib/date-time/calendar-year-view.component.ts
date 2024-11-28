@@ -50,6 +50,7 @@ const MONTHS_PER_ROW = 3;
     host: {
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView'
     },
+    standalone: false,
     preserveWhitespaces: false,
     changeDetection: ChangeDetectionStrategy.OnPush
 })

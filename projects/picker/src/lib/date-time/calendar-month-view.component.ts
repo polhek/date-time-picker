@@ -48,6 +48,7 @@ const WEEKS_PER_VIEW = 6;
     exportAs: 'owlYearView',
     templateUrl: './calendar-month-view.component.html',
     styleUrls: ['./calendar-month-view.component.scss'],
+    standalone: false,
     host: {
         '[class.owl-dt-calendar-view]': 'owlDTCalendarView'
     },
@@ -61,6 +62,12 @@ export class OwlMonthViewComponent<T>
      * */
     @Input()
     hideOtherMonths = false;
+
+    /**
+     * Whether to show calendar weeks in the calendar
+     * */
+    @Input()
+    showCalendarWeeks = false;
 
     private isDefaultFirstDayOfWeek = true;
 
@@ -256,6 +263,11 @@ export class OwlMonthViewComponent<T>
      * The date of the month that today falls on.
      * */
     public todayDate: number | null;
+
+    /**
+     * Week day numbers
+     * */
+    public weekNumbers: number[];
 
     /**
      * An array to hold all selectedDates' value
@@ -485,6 +497,7 @@ export class OwlMonthViewComponent<T>
         }
 
         this.todayDate = null;
+        this.weekNumbers = [];
 
         // the first weekday of the month
         const startWeekdayOfMonth = this.dateTimeAdapter.getDay(
@@ -511,7 +524,6 @@ export class OwlMonthViewComponent<T>
                     daysDiff
                 );
                 const dateCell = this.createDateCell(date, daysDiff);
-
                 // check if the date is today
                 if (
                     this.dateTimeAdapter.isSameDay(
@@ -526,9 +538,23 @@ export class OwlMonthViewComponent<T>
                 daysDiff += 1;
             }
             this._days.push(week);
+            if (this.showCalendarWeeks) {
+                const weekNumber = this.getISOWeek(new Date(week[0].ariaLabel));
+                this.weekNumbers.push(weekNumber);
+            }
         }
-
         this.setSelectedDates();
+    }
+
+    public getISOWeek(d: Date): number {
+        const clonedDate = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+        // Make Sunday's day number 7
+        clonedDate.setUTCDate(clonedDate.getUTCDate() + 4 - (clonedDate.getUTCDay()||7));
+        // Get first day of year
+        const yearStart = new Date(Date.UTC(clonedDate.getUTCFullYear(),0,1));
+        // Calculate full weeks to nearest Thursday
+        const weekNo = Math.ceil(( ( (+clonedDate - +yearStart) / 86400000) + 1)/7);
+        return weekNo;
     }
 
     private updateFirstDayOfWeek(locale: string): void {

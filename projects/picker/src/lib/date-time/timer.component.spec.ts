@@ -369,6 +369,7 @@ describe('OwlTimerComponent', () => {
 });
 
 @Component({
+    standalone: false,
     template: `
         <owl-date-time-timer
                 [hour12Timer]="hour12Timer"

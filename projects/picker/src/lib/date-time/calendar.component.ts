@@ -30,6 +30,7 @@ import {Subscription} from 'rxjs';
     exportAs: 'owlDateTimeCalendar',
     templateUrl: './calendar.component.html',
     styleUrls: ['./calendar.component.scss'],
+    standalone: false,
     host: {
         '[class.owl-dt-calendar]': 'owlDTCalendarClass'
     },
@@ -236,6 +237,12 @@ export class OwlCalendarComponent<T>
      */
     @Input()
     yearOnly = false;
+
+    /**
+     * Whether to show calendar weeks in the calendar
+     * */
+    @Input()
+    showCalendarWeeks = false;
 
     /**
      * Whether to should only the multi-year view.

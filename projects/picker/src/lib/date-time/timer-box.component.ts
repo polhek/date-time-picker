@@ -22,6 +22,7 @@ import { debounceTime } from 'rxjs/operators';
     selector: 'owl-date-time-timer-box',
     templateUrl: './timer-box.component.html',
     styleUrls: ['./timer-box.component.scss'],
+    standalone: false,
     preserveWhitespaces: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: {

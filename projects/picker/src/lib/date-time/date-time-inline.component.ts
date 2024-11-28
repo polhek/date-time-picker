@@ -42,6 +42,7 @@ export const OWL_DATETIME_VALUE_ACCESSOR: any = {
     host: {
         '[class.owl-dt-inline]': 'owlDTInlineClass'
     },
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     preserveWhitespaces: false,
     providers: [OWL_DATETIME_VALUE_ACCESSOR]
@@ -354,7 +355,7 @@ export class OwlDateTimeInlineComponent<T> extends OwlDateTime<T>
     public selectMonth(normalizedMonth: T): void {
         this.monthSelected.emit(normalizedMonth);
     }
-    
+
     /**
      * Emits the selected date
      * */
