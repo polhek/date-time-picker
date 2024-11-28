@@ -11,8 +11,8 @@ import {DEFAULT_DATE_NAMES, DEFAULT_DAY_OF_WEEK_NAMES, DEFAULT_MONTH_NAMES, SUPP
 
 @Injectable()
 export class UnixTimestampDateTimeAdapter extends DateTimeAdapter<number> {
-	protected firstMonthOfTheYear: number = 0;
-	protected firstDayOfTheWeek: number = 0;
+	public firstMonthOfTheYear: number = 0;
+	public firstDayOfTheWeek: number = 0;
     
     constructor(
         @Optional()
