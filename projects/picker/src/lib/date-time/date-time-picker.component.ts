@@ -17,9 +17,8 @@ import {
   Optional,
   Output,
   ViewContainerRef,
-  DOCUMENT
 } from '@angular/core';
-
+import { DOCUMENT } from '@angular/common';
 import { ComponentPortal } from '@angular/cdk/portal';
 import {
     BlockScrollStrategy,

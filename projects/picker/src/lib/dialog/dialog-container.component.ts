@@ -13,8 +13,8 @@ import {
     OnInit,
     Optional,
     ViewChild,
-    DOCUMENT,
 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import {
     animate,
     animateChild,
