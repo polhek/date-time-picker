@@ -9,7 +9,7 @@ If you need support for other Angular version, see _Breaking Changes_ below.
 
 ## Breaking Changes
 
--   Version 20.x.x >= no longer supports ng 19. If you need ng 19 support, stick with version 19.x.x.
+-   Version 20.x.x is the official release for Angular 20 and it also supports Angular 19.
 -   Version 19.x.x >= no longer supports ng 18. If you need ng 18 support, stick with version 18.x.x.
 -   Version 18.x.x >= no longer supports ng 17. If you need ng 17 support, stick with version 17.x.x.
 -   Version 17.x.x >= no longer supports ng 16 - 13. If you need ng 16-13 support, stick with version 16.x.x.
