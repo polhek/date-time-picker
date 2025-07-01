@@ -117,49 +117,53 @@
     </button>
 </div>
 <div class="owl-dt-calendar-main" cdkMonitorSubtreeFocus tabindex="-1">
-    @switch (currentView) { @case (DateView.MONTH) {
-    <owl-date-time-month-view
-        [pickerMoment]="pickerMoment"
-        [firstDayOfWeek]="firstDayOfWeek"
-        [selected]="selected"
-        [selecteds]="selecteds"
-        [selectMode]="selectMode"
-        [minDate]="minDate"
-        [showCalendarWeeks]="showCalendarWeeks"
-        [maxDate]="maxDate"
-        [dateFilter]="dateFilter"
-        [hideOtherMonths]="hideOtherMonths"
-        (pickerMomentChange)="handlePickerMomentChange($event)"
-        (selectedChange)="dateSelected($event)"
-        (userSelection)="userSelected()"
-    ></owl-date-time-month-view>
-    } @case (DateView.YEAR) {
-    <owl-date-time-year-view
-        [pickerMoment]="pickerMoment"
-        [selected]="selected"
-        [selecteds]="selecteds"
-        [selectMode]="selectMode"
-        [minDate]="minDate"
-        [maxDate]="maxDate"
-        [dateFilter]="dateFilter"
-        (keyboardEnter)="focusActiveCell()"
-        (pickerMomentChange)="handlePickerMomentChange($event)"
-        (monthSelected)="selectMonthInYearView($event)"
-        (change)="goToDateInView($event, DateView.MONTH)"
-    ></owl-date-time-year-view>
-    } @case (DateView.MULTI_YEARS) {
-    <owl-date-time-multi-year-view
-        [pickerMoment]="pickerMoment"
-        [selected]="selected"
-        [selecteds]="selecteds"
-        [selectMode]="selectMode"
-        [minDate]="minDate"
-        [maxDate]="maxDate"
-        [dateFilter]="dateFilter"
-        (keyboardEnter)="focusActiveCell()"
-        (pickerMomentChange)="handlePickerMomentChange($event)"
-        (yearSelected)="selectYearInMultiYearView($event)"
-        (change)="goToDateInView($event, DateView.YEAR)"
-    ></owl-date-time-multi-year-view>
-    } }
+    @switch (currentView) {
+        @case (DateView.MONTH) {
+            <owl-date-time-month-view
+                [pickerMoment]="pickerMoment"
+                [firstDayOfWeek]="firstDayOfWeek"
+                [selected]="selected"
+                [selecteds]="selecteds"
+                [selectMode]="selectMode"
+                [minDate]="minDate"
+                [showCalendarWeeks]="showCalendarWeeks"
+                [maxDate]="maxDate"
+                [dateFilter]="dateFilter"
+                [hideOtherMonths]="hideOtherMonths"
+                (pickerMomentChange)="handlePickerMomentChange($event)"
+                (selectedChange)="dateSelected($event)"
+                (userSelection)="userSelected()"
+            ></owl-date-time-month-view>
+        }
+        @case (DateView.YEAR) {
+            <owl-date-time-year-view
+                [pickerMoment]="pickerMoment"
+                [selected]="selected"
+                [selecteds]="selecteds"
+                [selectMode]="selectMode"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [dateFilter]="dateFilter"
+                (keyboardEnter)="focusActiveCell()"
+                (pickerMomentChange)="handlePickerMomentChange($event)"
+                (monthSelected)="selectMonthInYearView($event)"
+                (change)="goToDateInView($event, DateView.MONTH)"
+            ></owl-date-time-year-view>
+        }
+        @case (DateView.MULTI_YEARS) {
+            <owl-date-time-multi-year-view
+                [pickerMoment]="pickerMoment"
+                [selected]="selected"
+                [selecteds]="selecteds"
+                [selectMode]="selectMode"
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [dateFilter]="dateFilter"
+                (keyboardEnter)="focusActiveCell()"
+                (pickerMomentChange)="handlePickerMomentChange($event)"
+                (yearSelected)="selectYearInMultiYearView($event)"
+                (change)="goToDateInView($event, DateView.YEAR)"
+            ></owl-date-time-multi-year-view>
+        }
+    }
 </div>

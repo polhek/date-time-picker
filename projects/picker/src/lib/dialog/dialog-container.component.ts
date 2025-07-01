@@ -62,7 +62,7 @@ const zoomFadeInFrom = {
                             style({ transform: 'scale(1.05)', offset: 0.3 }),
                             style({ transform: 'scale(.95)', offset: 0.8 }),
                             style({ transform: 'scale(1)', offset: 1.0 }),
-                        ])
+                        ]),
                     ),
                     animateChild(),
                 ],
@@ -74,12 +74,12 @@ const zoomFadeInFrom = {
                         oy: '50%',
                         scale: 1,
                     },
-                }
+                },
             ),
             transition(
                 'enter => exit',
                 [animateChild(), animate(200, style(zoomFadeIn))],
-                { params: { x: '0px', y: '0px', ox: '50%', oy: '50%' } }
+                { params: { x: '0px', y: '0px', ox: '50%', oy: '50%' } },
             ),
         ]),
     ],
@@ -167,7 +167,7 @@ export class OwlDialogContainerComponent
         private focusTrapFactory: FocusTrapFactory,
         @Optional()
         @Inject(DOCUMENT)
-        private document: any
+        private document: any,
     ) {
         super();
     }
@@ -178,11 +178,11 @@ export class OwlDialogContainerComponent
      * Attach a ComponentPortal as content to this dialog container.
      */
     public attachComponentPortal<T>(
-        portal: ComponentPortal<T>
+        portal: ComponentPortal<T>,
     ): ComponentRef<T> {
         if (this.portalOutlet.hasAttached()) {
             throw Error(
-                'Attempting to attach dialog content after content is already attached'
+                'Attempting to attach dialog content after content is already attached',
             );
         }
 
@@ -191,7 +191,7 @@ export class OwlDialogContainerComponent
     }
 
     public attachTemplatePortal<C>(
-        portal: TemplatePortal<C>
+        portal: TemplatePortal<C>,
     ): EmbeddedViewRef<C> {
         throw new Error('Method not implemented.');
     }
@@ -268,7 +268,7 @@ export class OwlDialogContainerComponent
     private trapFocus(): void {
         if (!this.focusTrap) {
             this.focusTrap = this.focusTrapFactory.create(
-                this.elementRef.nativeElement
+                this.elementRef.nativeElement,
             );
         }
 
